@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<body>
+
+  <div class="userContainer" *ngFor="let i of allUsers">
+      <img (click)="openProfile(i.username)" src="{{i.profile_pic}}" alt="profile pic" class="profilePic">
+      <p class="name">{{i.name}}</p>
+      <div *ngIf="following.indexOf(i._id) > -1">
+        <button (click)="unfollow(i._id)" class="unfollowButton btn btn-sm btn-warning" placement="bottom" ngbTooltip="Click to unfollow">Following</button>
+      </div>
+      <div *ngIf="following.indexOf(i._id) === -1">
+        <button (click)="follow(i._id)" class="followButton btn btn-sm btn-info">Follow</button>
+      </div>
+  </div>
+</body>

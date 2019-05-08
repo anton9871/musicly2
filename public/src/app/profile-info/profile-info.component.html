@@ -1,0 +1,32 @@
+<div class="containerr">
+  
+  <div class="picContainer">
+    <img class="profilePic" src="{{profile_info.profilePic}}" alt="Profile Picture">
+  </div>
+  
+  <div class="infoContainer">
+    <h4 class="profileInfo">{{profile_info.name}}</h4>
+    <p class="profileInfo">{{profile_info.location}}</p>
+    <div *ngIf="myProfile">
+      <button class="btn-sm btn-light" (click)="openWindowCustomClass(content)" style="cursor:pointer">Edit Profile Info</button>
+    </div>
+  </div>
+  <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Profile Info</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="editProfileInfo()">
+          <input class="form-control mt-1" value="{{profile_info.name}}"  name="profile_info.name" type="text" placeholder="name"[(ngModel)]="profile_info.name">
+          <input class="form-control mt-1" value="{{profile_info.location}}"  name="profile_info.location" type="text" placeholder="location"[(ngModel)]="profile_info.location">
+          <input class="form-control mt-1" value="{{profile_info.profile_pic}}"  name="profile_info.profile_pic" type="text" placeholder="Profile Pic URL"[(ngModel)]="profile_info.profile_pic">
+          <button class="btn btn-secondary d-inline float-sm-right" type="submit">Update</button>
+          <button type="button" class="btn btn-light d-inline float-sm-right" (click)="modal.close('Close click')">Close</button>
+        </form>
+      </div>
+    </ng-template>
+  
+</div>

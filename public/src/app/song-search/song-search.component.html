@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="songPic"></div>
+<div class="searchSongContainer">
+  <form (submit)="searchForSong()" >
+    <input type="text" name="searchSong.query" [(ngModel)]="searchSong.query" placeholder="Search for a song!" class="form-control form-control-lg">
+  </form>
+</div>
+
+<div *ngIf="showQueryResultsDiv">
+  <div class="resultsContainer" *ngFor="let i of songSearchResults" >
+
+    <i class="fas fa-heart" (click)="addFavoriteSong(i.id)" triggers="click" [autoClose]="true" ngbTooltip="Saved!" #tooltip3="ngbTooltip"></i>
+    <iframe class="searchIframes mt-1" [src]="sanitizer.bypassSecurityTrustResourceUrl('https://open.spotify.com/embed/track/'+i.id)"  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+</div>
+
+
+
+

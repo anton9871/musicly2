@@ -1,0 +1,29 @@
+.containerr {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    background-image: url('https://indrej.com/wp-content/uploads/2018/01/shutterstock_514443079-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;                   
+    background-position: center center;   
+}
+.picContainer{
+    display: inline-block;
+    width: 20%;
+    padding-left: 1%;
+
+}
+.profilePic{
+    border-radius: 50%;
+    width: 100%; 
+}
+.infoContainer{
+    display: inline-block;
+    margin-left: 1%;
+}
+
+.profileInfo{
+    background-color: black;
+    color: white;
+    width: auto;
+}

@@ -1,0 +1,27 @@
+body{
+    background-color:#F2F3F5;   
+    height: 100vh;
+}
+.userContainer{
+    display: inline-block;
+    margin-left: 5px;
+}
+.profilePic{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.followButton{
+    display: block;
+    margin: 0 auto;
+}
+.unfollowButton{
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+.name{
+    text-align: center;
+    height: 10px;
+}

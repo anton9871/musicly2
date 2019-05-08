@@ -1,0 +1,122 @@
+
+<div class="bg-img">
+  <div class="overlay"></div>
+</div>
+
+<h2 class="top-header">Musicly</h2>
+
+<div class="home-wrapper">
+  <div class="container">
+    <div class="row">
+
+      <div class="home-content">
+        <h1 class="white-text middle-header">Welcome to Musicly</h1>
+        <p class="white-text middle-text">Personalities through music.</p>
+        <div class="button-group">
+          <button (click)="openWindowCustomClass(loginModal)" class="btn btn-lg white-btn">Log In</button>
+          <button (click)="openWindowCustomClass(registrationModal)" class="btn btn-lg main-btn">Register</button>
+        </div>
+        <div (click)="openWindowCustomClass(defLogModal)" id="defaultLogin">Log In to Default Account</div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div id="about" class="section md-padding">
+
+  <div class="container">
+
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="about">
+          <i class="fa fa-headphones icon"></i>
+          <h3>Discover New Music</h3>
+          <p>Gain access to thousands of songs through Spotify's API</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="about">
+          <i class="fa fa-magic"></i>
+          <h3>Profile Your Sound</h3>
+          <p>Highlight your favorite artists and songs to show what kind of music you're into. </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="about">
+          <i class="fas fa-user-friends icon"></i>
+          <h3>Connect With Friends</h3>
+          <p>Follow your friends' profiles and see what type of music they're currently listening to</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #loginModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Log In</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div style="color:red" *ngIf="error.status">{{error.message}}</div>
+    <form (submit)="login()">
+      <input class="form-control mt-2" type="text"  placeholder="username" name="loginObj.username" [(ngModel)]="loginObj.username">
+      <input class="form-control mt-2" type="password"  placeholder="Password" name="loginObj.password" [(ngModel)]="loginObj.password">
+      <button class="float-sm-right mt-2 btn btn-primary"  type="submit">Log In</button>
+      <button class="float-sm-right mt-2 btn btn-default" type="reset">Cancel</button>
+    </form>
+  </div>
+</ng-template>
+
+
+<ng-template #defLogModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Log In</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div style="color:red" *ngIf="error.status">{{error.message}}</div>
+    <form (submit)="loginDefault()">
+      <input class="form-control mt-2" type="text" name="loginObj.username" [(ngModel)]="defaultUser.username" value="{{defaultUser.username}}" >
+      <input class="form-control mt-2" type="password" name="loginObj.password"  [(ngModel)]="defaultUser.password" value="{{defaultUser.password}}" >
+      <button class="float-sm-right mt-2 btn btn-primary"  type="submit">Log In</button>
+      <button class="float-sm-right mt-2 btn btn-default" type="reset">Cancel</button>
+    </form>
+  </div>
+</ng-template>
+
+
+<ng-template #registrationModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Registration</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form (submit)="register()">
+      <input class="form-control mt-1" placeholder="Full Name" name="user.name" [(ngModel)]="user.name" type="text">
+      <input class="form-control mt-1" placeholder="Username" name="user.username" [(ngModel)]="user.username" type="username">
+      <input class="form-control mt-1" placeholder="Password" name="user.password" [(ngModel)]="user.password" type="password">
+      <input class="form-control mt-1" placeholder="Confirm Password" name="user.confirm_pw" [(ngModel)]="user.confirm_pw"
+      type="password">
+      <input class="form-control mt-2" placeholder="Location" name="user.location" [(ngModel)]="user.location" type="text">
+      <input class="form-control mt-2" placeholder="Profile Pic URL" name="user.profile_pic" [(ngModel)]="user.profile_pic" type="text">
+      <button class="float-sm-right btn btn-primary mt-1" type="submit" >Submit</button>
+      <button class="float-sm-right btn btn-default" type="reset">Cancel</button>
+    </form>
+  </div>
+</ng-template>

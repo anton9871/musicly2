@@ -1,0 +1,37 @@
+
+<div>
+  
+    <h4 class="header">Top Artists 
+      <div class="d-inline" *ngIf="myProfile"> 
+        <i class='far fa-edit ml-3' style='font-size: 17px' (click)="showEditBool = !showEditBool"></i>
+      </div>
+    </h4>
+    <!-- search for an artist -->
+    <div class="ml-2 searchFavArtistContainer" *ngIf="showEditBool">
+      <form (keyup)="searchArtist()">
+          <input type="text" placeholder="Add an Artist"  name="searchinputartist.artist" [(ngModel)]="searchinputartist.artist" class="form-control form-control-lg" style="width: 60%; margin:auto;" >
+        </form>
+    </div>
+  
+    <!-- this block will show the results of searching for your artist -->
+    <div *ngIf="showArtistData && showEditBool">
+        <div *ngFor="let i of searchArtistResults['artists']['items']">
+          <p>{{i['name']}} <i  class="fas fa-plus ml-1" (click)="addFavArtist(i.id, i.name, i.genres, i.images[0].url, i.followers.total)"></i>  </p>
+        </div>
+      </div>
+  
+    <div *ngIf="favoriteArtists">
+      <div class="favArtistBox ml-2" *ngFor="let i of favoriteArtists['data']">
+        <div class="favArtistBox">
+          <img class="artistImage" src="{{i.artist_image}}" >
+          <div class="artistName">{{i.artist_name}}   
+            <div *ngIf="showEditBool" style="display:inline-block">
+              <i (click)="deleteFavArtist(i._id)" class='far fa-trash-alt' style='font-size:13px; color:blue'> </i> 
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  </div>

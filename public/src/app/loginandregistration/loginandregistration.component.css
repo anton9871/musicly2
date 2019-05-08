@@ -1,0 +1,132 @@
+.loginregcontainer{
+    margin-top: 50px;
+    display:inline-block;
+    vertical-align: top;
+}
+.registration {
+    vertical-align: top;
+    width: 350px;
+    height: auto;
+    border: 1px solid black;
+    display: inline-block;
+}
+.login {
+
+    width: 350px;
+    height: auto;
+    border: 1px solid black;
+    display: inline-block;
+
+}
+input {
+    display: block;
+}
+.bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('./img/background1.jpg');
+}
+
+.bg-img .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .8;
+    background: #1C1D21;
+}
+.top-header, .white-text{
+    color: white;
+}
+.button-group{
+    text-align: center;
+}
+.main-btn {
+    background: #6195FF;
+    color: #FFF;
+    margin-left: 4px;
+}
+.white-btn {
+    background: #FFF;
+    color: #10161A !important;
+    margin-right: 4px;
+}
+#defaultLogin{
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+.home-content{
+    margin: 0 auto;
+    margin-top: 15%;
+}
+.middle-header{
+    font-size: 54px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.middle-text{
+    text-align: center;
+}
+
+/*------------------------------------*\
+	About
+\*------------------------------------*/
+
+#about{
+    margin-top:330px;
+}
+
+.about {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid #EEE;
+    margin: 15px 0px;
+}
+
+.about i {
+    font-size: 36px;
+    color: #6195FF;
+    margin-bottom: 20px;
+}
+
+
+/* --  section header  -- */
+
+.section-header {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.section-header .title {
+    text-transform: capitalize;
+}
+
+.title:after {
+    content:"";
+  	display:block;
+  	height:4px;
+  	width:40px;
+  	background-color: #6195FF;
+    margin-top: 20px;
+}
+
+.text-center .title:after {
+    margin: 20px auto 0px;
+}
+
+
+
+

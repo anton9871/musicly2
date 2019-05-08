@@ -1,0 +1,38 @@
+.searchSongContainer{
+    margin: 0 auto;
+}
+form{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.resultsContainer{
+    margin-left: 20%;
+    width: 60%;
+    display: inline-block;
+    background-color: #3A2E39;
+}
+
+.searchIframes {
+    width: 95%;
+    height: 75px;
+    display: inline-block;
+}
+
+i{
+    font-size: 20px;
+    vertical-align: top;
+    margin-top: 4%;
+    margin-right: 5px;
+    cursor: pointer;
+    color: red;
+}
+.songPic{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    vertical-align: top;
+    background-image: url('../loginandregistration/img/background1.jpg')
+}
+

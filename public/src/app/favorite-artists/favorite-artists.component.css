@@ -1,0 +1,18 @@
+.favArtistBox {
+    display: inline-block;
+}
+.artistImage{
+    width: 200px;
+    height: 200px;
+}
+.artistName {
+    text-align: center;
+}
+
+i {
+    cursor: pointer;
+}
+
+.header{
+    text-align: center;
+}
